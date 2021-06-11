@@ -252,6 +252,13 @@ libfdk_aac_la_SOURCES = \
     $(SBRDEC_SRC) $(SBRENC_SRC) \
     $(PCMUTILS_SRC) $(FDK_SRC) $(SYS_SRC)
 
+.rc.o:
+	$(RC) $< -o $@
+
+if FDK_PLATFORM_WIN32
+    WINVERSIONINFO_SOURCES = resource.rc
+endif
+
 EXTRA_DIST = \
     $(top_srcdir)/CMakeLists.txt \
     $(top_srcdir)/.clang-format \
