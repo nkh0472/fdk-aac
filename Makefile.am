@@ -256,7 +256,7 @@ libfdk_aac_la_SOURCES = \
 	$(RC) $< -o $@
 
 if FDK_PLATFORM_WIN32
-    WINVERSIONINFO_SOURCES = resource.rc
+    libfdk_aac_la_SOURCES += resource.rc
 endif
 
 EXTRA_DIST = \
