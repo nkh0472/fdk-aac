@@ -33,6 +33,18 @@ AC_SUBST(FDK_AAC_VERSION)
 AC_SUBST(LIBS_PUBLIC)
 AC_SUBST(LIBS_PRIVATE)
 
+X_PLATFORM=posix
+case ${host} in
+*-*-mingw*)
+    X_PLATFORM=win32
+    ;;
+*)
+    AM_ICONV
+esac
+AM_CONDITIONAL([FDK_PLATFORM_POSIX],[test "$X_PLATFORM" = "posix"])
+AM_CONDITIONAL([FDK_PLATFORM_WIN32],[test "$X_PLATFORM" = "win32"])
+AS_IF([FDK_PLATFORM_WIN32], [AC_CHECK_TOOL(RC, windres,)], [])
+
 AC_CONFIG_FILES([Makefile
                  fdk-aac.pc])
 AC_OUTPUT
