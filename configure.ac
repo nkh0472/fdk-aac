@@ -40,9 +40,7 @@ case ${host} in
     ;;
 *)
 esac
-AM_CONDITIONAL([FDK_PLATFORM_POSIX],[test "$X_PLATFORM" = "posix"])
-AM_CONDITIONAL([FDK_PLATFORM_WIN32],[test "$X_PLATFORM" = "win32"])
-AS_IF([test "$FDK_PLATFORM_WIN32" = 1], [AC_CHECK_TOOL(RC, windres,)], [])
+AS_IF([test "$X_PLATFORM" = "win32"], [AC_CHECK_TOOL(RC, windres,)], [])
 
 AC_CONFIG_FILES([Makefile
                  fdk-aac.pc])
