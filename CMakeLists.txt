@@ -451,7 +451,7 @@ set(libfdk_aac_SOURCES
     ${PCMUTILS_SRC} ${FDK_SRC} ${SYS_SRC})
 
 if(WIN32 AND BUILD_SHARED_LIBS)
-  set(libfdk_aac_SOURCES ${libfdk_aac_SOURCES} fdk-aac.def resource.rc)
+  set(libfdk_aac_SOURCES ${libfdk_aac_SOURCES} fdk-aac.def /win32/resource.rc)
 endif()
 
 ## Create Library target. Actually fdk-aac is enough, but we also create
