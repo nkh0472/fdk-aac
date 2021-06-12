@@ -256,7 +256,7 @@ libfdk_aac_la_SOURCES = \
 	$(RC) $< -o $@
 
 if FDK_PLATFORM_WIN32
-    libfdk_aac_la_SOURCES += resource.rc
+    libfdk_aac_la_SOURCES += /win32/resource.rc
 endif
 
 EXTRA_DIST = \
@@ -303,5 +303,6 @@ EXTRA_DIST = \
     $(top_srcdir)/libFDK/src/mips/*.cpp \
     $(top_srcdir)/METADATA \
     $(top_srcdir)/PREUPLOAD.cfg \
-    $(top_srcdir)/win32/*.h
+    $(top_srcdir)/win32/*.h \
+    $(top_srcdir)/win32/*.rc
 
